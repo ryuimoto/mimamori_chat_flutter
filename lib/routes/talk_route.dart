@@ -6,7 +6,9 @@ class Talk extends StatelessWidget {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text('トーク'),
+        title: Text('トーク',
+        style: TextStyle(color: Color(0xffFFFFFF)),
+        ),
       ),
       body: ListView(
           // padding: const EdgeInsets.all(8),

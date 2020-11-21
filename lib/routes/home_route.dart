@@ -5,7 +5,9 @@ class Home extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text('ホーム'),
+        title: Text('ホーム',
+        style: TextStyle(color: Color(0xffFFFFFF)),
+        ),
       ),
       body: Center(child: Text('ホーム'),
       ),

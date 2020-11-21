@@ -13,6 +13,7 @@ class Chat extends StatelessWidget{
       appBar: AppBar(
         title: Text(
           this.username ?? '',
+          style: TextStyle(color: Color(0xffFFFFFF)),
         ),
         actions: [
           Padding(
