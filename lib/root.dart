@@ -23,7 +23,7 @@ class _RootWidgetState extends State<RootWidget> {
     Icons.textsms,
     Icons.access_time,
     Icons.content_paste,
-    Icons.work,
+    Icons.settings,
   ];
  
   static const _footerItemNames = [
@@ -31,7 +31,7 @@ class _RootWidgetState extends State<RootWidget> {
     'トーク',
     'タイムライン',
     'ニュース',
-    'ウォレット',
+    '設定',
   ];
 
   var _routes = [
@@ -96,7 +96,7 @@ class _RootWidgetState extends State<RootWidget> {
     return Scaffold(
       body: _routes.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed, // これを書かないと3つまでしか表示されない
+        type: BottomNavigationBarType.fixed,
         items: _bottomNavigationBarItems,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
