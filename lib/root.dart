@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mimamori_chat/routes/auth/login.dart';
  
 import 'routes/home_route.dart';
 import 'routes/talk_route.dart';
@@ -93,14 +94,20 @@ class _RootWidgetState extends State<RootWidget> {
  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _routes.elementAt(_selectedIndex),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: _bottomNavigationBarItems,
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-      ),
-    );
+    bool login_flag = false;
+
+    if(!login_flag){
+      return Login();
+    }else{
+      return Scaffold(
+        body: _routes.elementAt(_selectedIndex),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: _bottomNavigationBarItems,
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+        ),
+      );
+    }
   }
 }
