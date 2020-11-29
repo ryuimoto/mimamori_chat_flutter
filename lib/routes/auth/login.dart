@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final String url = 'https://stay-homes.net/api/return_json';
+    // print(http.get(url));
+    http.get(url)
+    .then((response){
+      print("${response.body}");
+    });
+
     return MaterialApp(
       title: 'Form',
       debugShowCheckedModeBanner: false,
