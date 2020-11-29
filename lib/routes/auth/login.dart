@@ -5,12 +5,9 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String url = 'https://stay-homes.net/api/return_json';
-    // print(http.get(url));
 
-    print(12345);
     http.get(url)
     .then((response){
-      print("${response.body}");
       print("${response.body}");
     });
 
