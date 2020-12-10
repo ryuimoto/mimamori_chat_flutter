@@ -7,6 +7,8 @@ import 'routes/talk_route.dart';
 import 'routes/timeline_route.dart';
 import 'routes/setting_route.dart';
 import 'routes/news_route.dart';
+import 'package:http/http.dart' as http;
+import 'package:device_info/device_info.dart';
  
 class RootWidget extends StatefulWidget {
   RootWidget({Key key}) : super(key: key);
@@ -94,7 +96,25 @@ class _RootWidgetState extends State<RootWidget> {
  
   @override
   Widget build(BuildContext context) {
-    bool login_flag = false;
+    bool login_flag;
+
+
+    _getId(context).then((id) async{
+
+      final dynamic body = {'device_id': id};
+      // final String url = 'http://mimamori_chat.deve/api/login_check'; // real
+      final String url = 'http://mimamori_chat.deve/api/login_check'; // practice
+    
+      http.Response resp = await http.post(url, body: body);
+
+      // login_flag = resp.body;
+
+      print(login_flag);
+
+    });
+
+    login_flag = false;
+    // login_flag = true;
 
     if(!login_flag){
       return Login();
@@ -109,5 +129,17 @@ class _RootWidgetState extends State<RootWidget> {
         ),
       );
     }
+  }
+}
+
+Future<String> _getId(context) async {
+  DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+
+  if (Theme.of(context).platform == TargetPlatform.iOS) {
+    IosDeviceInfo iosDeviceInfo = await deviceInfo.iosInfo;
+    return iosDeviceInfo.identifierForVendor; // unique ID on iOS
+  } else {
+    AndroidDeviceInfo androidDeviceInfo = await deviceInfo.androidInfo;
+    return androidDeviceInfo.androidId; // unique ID on Android
   }
 }

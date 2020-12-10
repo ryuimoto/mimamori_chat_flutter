@@ -45,7 +45,6 @@ class Talk extends StatelessWidget {
             Tile(icon: Icons.person, username: "あすらん", message: "キラァァァァ"),
             Tile(icon: Icons.person, username: "知人B", message: "1.14 release !"),
           ]),
-          // ================================
     );
   }
 }

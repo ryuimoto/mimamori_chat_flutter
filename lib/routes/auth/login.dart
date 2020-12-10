@@ -8,7 +8,7 @@ class Login extends StatelessWidget {
 
     http.get(url)
     .then((response){
-      print("${response.body}");
+      // print("${response.body}");
     });
 
     return MaterialApp(
@@ -85,12 +85,9 @@ class _ChangeFormState extends State<ChangeForm> {
               onPressed: () {},
               shape: const StadiumBorder(),
             ),
-
           ],
         )
-        
     );
   }
-
 }
 
