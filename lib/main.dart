@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:mimamori_chat_flutter/user/routes/home.dart';
 
 void main() {
-  runApp(MyApp());
+  // runApp(MyApp());
+  runApp(new MaterialApp(
+    home: new Home(),
+  ));
+
+  // runApp(Home());
 }
 
 class MyApp extends StatelessWidget {
