@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mimamori_chat_flutter/user/routes/home.dart';
 import 'package:mimamori_chat_flutter/user/root.dart';
 
-void main() {
-  runApp(MyApp());
-  // runApp(Home());
-}
-
-class MyApp extends StatelessWidget{
+class Setting extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +10,7 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primaryColor: Colors.blueGrey[900],
       ),
-      home: RootWidget(),
+      home: Center(child: Text('設定')),
     );
   }
 }
