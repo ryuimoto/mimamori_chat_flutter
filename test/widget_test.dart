@@ -10,7 +10,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:mimamori_chat_flutter/main.dart';
 
-void main() {
+void
+main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());
