@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mimamori_chat_flutter/user/routes/home.dart';
 import 'package:mimamori_chat_flutter/user/root.dart';
+import 'user/auth/login.dart';
 
 void main() {
-  runApp(MyApp());
+  // runApp(MyApp());
+  runApp(new MaterialApp(
+    home: new Login(),
+  ));
   // runApp(Home());
 }
 
