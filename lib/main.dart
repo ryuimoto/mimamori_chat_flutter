@@ -6,6 +6,7 @@ import 'user/auth/login.dart';
 void main() {
   // runApp(MyApp());
   runApp(new MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: new Login(),
   ));
   // runApp(Home());
