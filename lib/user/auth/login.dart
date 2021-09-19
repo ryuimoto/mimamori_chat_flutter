@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:device_info/device_info.dart';
 
 class Login extends StatelessWidget{
+  final myFocusNode = FocusNode();
+  String? email;
+  String? password;
+
   @override
-  // Widget build(BuildContext context) {
-  //   // return MaterialApp(
-  //   //   debugShowCheckedModeBanner: false,
-  //   //   home: Image.asset('assets/icon/splash/tp.png'),
-  //   // );
-  //
-  // }
   Widget build(BuildContext context) {
-    final _passwordFocusNode = FocusNode();
     return Scaffold(
       body: Form(
         child: Column(
@@ -18,17 +15,24 @@ class Login extends StatelessWidget{
             Image.asset('assets/icon/splash/tp.png'),
             TextFormField(
               decoration: InputDecoration(labelText: 'メールアドレス'),
+              onChanged: (text){
+                email = text;
+              },
             ),
             TextFormField(
               decoration: InputDecoration(labelText: 'パスワード'),
-              focusNode: _passwordFocusNode,
               obscureText: true,
+              onChanged: (text){
+                password = text;
+              },
             ),
             RaisedButton(
               child: const Text('ログイン'),
               color: Colors.orange,
               textColor: Colors.white,
-              onPressed: () {},
+              onPressed: () async {
+                _getLoginData();
+              },
             ),
           ],
         ),
@@ -40,3 +44,11 @@ class Login extends StatelessWidget{
   }
 }
 
+Future<void> _getLoginData() async{
+  DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+  IosDeviceInfo iosDeviceInfo = await deviceInfo.iosInfo;
+
+  print(iosDeviceInfo);
+
+
+}
