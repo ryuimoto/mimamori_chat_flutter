@@ -25,6 +25,7 @@ class Login extends StatelessWidget {
               ),
             ),
             TextField(
+              obscureText: true,
               decoration: InputDecoration(
                 labelText: 'パスワード',
               ),
