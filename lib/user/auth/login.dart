@@ -5,6 +5,9 @@ import 'package:device_info/device_info.dart';
 import 'package:http/http.dart' as http;
 
 class Login extends StatelessWidget {
+  String? email;
+  String? password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,19 +26,27 @@ class Login extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: 'メールアドレス',
               ),
+              onChanged: (text){
+                email = text;
+              },
             ),
             TextField(
               obscureText: true,
               decoration: InputDecoration(
                 labelText: 'パスワード',
               ),
+              onChanged: (text){
+                password = text;
+              },
             ),
             ElevatedButton(
                 child: Text('ログイン'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.orange,
                 ),
-                onPressed: (){}
+                onPressed: () async {
+                  
+                }
             ),
           ],
         ),
