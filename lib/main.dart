@@ -4,7 +4,7 @@ import 'package:mimamori_chat_flutter/user/root.dart';
 import 'user/auth/login.dart';
 
 void main() {
-  // runApp(MyApp());
+  runApp(MyApp());
   runApp(new MaterialApp(
     debugShowCheckedModeBanner: false,
     home: new Login(),
