@@ -16,7 +16,6 @@ class Home extends StatelessWidget{
           title: Text('ホーム'),
         ),
       )
-
     );
   }
 }

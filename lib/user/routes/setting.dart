@@ -10,7 +10,12 @@ class Setting extends StatelessWidget{
       theme: ThemeData(
         primaryColor: Colors.blueGrey[900],
       ),
-      home: Center(child: Text('設定')),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.orange,
+          title: Text('設定'),
+        ),
+      ),
     );
   }
 }
