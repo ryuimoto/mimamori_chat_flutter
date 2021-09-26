@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:mimamori_chat_flutter/user/routes/home.dart';
 import 'package:mimamori_chat_flutter/user/routes/setting.dart';
 import 'package:mimamori_chat_flutter/user/routes/chat.dart';
+import 'package:mimamori_chat_flutter/user/routes/timeline.dart';
+import 'package:mimamori_chat_flutter/user/routes/news.dart';
+
 
 class RootWidget extends StatefulWidget {
   RootWidget({Key? key}) : super(key: key);
@@ -19,6 +22,8 @@ class _RootWidgetState extends State<RootWidget> {
   static const _footerIcons = [
     Icons.home,
     Icons.chat,
+    Icons.access_time,
+    Icons.list_alt,
     Icons.settings,
   ];
 
@@ -33,6 +38,8 @@ class _RootWidgetState extends State<RootWidget> {
   var _routes = [
     Home(),
     Chat(),
+    Timeline(),
+    News(),
     Setting(),
   ];
 
@@ -56,6 +63,7 @@ class _RootWidgetState extends State<RootWidget> {
           _footerItemNames[index],
           style: TextStyle(
             color: Colors.black87,
+            fontSize: 12,
           ),
         )
     );
@@ -71,6 +79,7 @@ class _RootWidgetState extends State<RootWidget> {
           _footerItemNames[index],
           style: TextStyle(
             color: Colors.black26,
+            fontSize: 12,
           ),
         )
     );

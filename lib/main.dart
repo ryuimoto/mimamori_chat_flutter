@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mimamori_chat_flutter/user/routes/home.dart';
 import 'package:mimamori_chat_flutter/user/root.dart';
+import 'package:mimamori_chat_flutter/user/routes/menu.dart';
 import 'user/auth/login.dart';
 
 void main() {
   // runApp(MyApp());
-  runApp(new MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: new Login(),
-  ));
-  // runApp(Home());
+  // runApp(new MaterialApp(
+  //   debugShowCheckedModeBanner: false,
+  //   home: new Login(),
+  // ));
+  runApp(Menu());
 }
 
 class MyApp extends StatelessWidget{
