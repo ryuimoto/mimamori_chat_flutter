@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mimamori_chat_flutter/user/root.dart';
 
+import 'package:mimamori_chat_flutter/user/routes/setting_profile.dart';
+
 class Setting extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class Setting extends StatelessWidget{
         ),
         body: ListView(
           children: [
-            _menuItem('プロフィール', Icon(Icons.accessibility)),
+            _menuItem('プロフィール', Icon(Icons.account_circle),context),
           ],
         ),
       ),
@@ -25,7 +27,7 @@ class Setting extends StatelessWidget{
   }
 }
 
-Widget _menuItem(String title,Icon icon){
+Widget _menuItem(String title,Icon icon,BuildContext context){
   return GestureDetector(
     child: Container(
       padding: EdgeInsets.all(8.0),
@@ -49,8 +51,9 @@ Widget _menuItem(String title,Icon icon){
       ),
     ),
     onTap: (){
-      print('onTap called');
-
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => SettingProfile())
+      );
     },
   );
 }
